@@ -1,0 +1,82 @@
+{
+    "openapi": "3.0.0",
+    "paths": {
+      "/api/vemox/normal": {
+        "post": {
+          "operationId": "VemoxController_vemoxNormal",
+          "parameters": [],
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VemoxInputDto"
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": ""
+            }
+          }
+        }
+      },
+      "/api/vemox/json": {
+        "post": {
+          "operationId": "VemoxController_vemoxJson",
+          "parameters": [],
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VemoxInputDto"
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": ""
+            }
+          }
+        }
+      }
+    },
+    "info": {
+      "title": "MVC API",
+      "description": "This is the API document for MVC exams.",
+      "version": "1.0",
+      "contact": {}
+    },
+    "tags": [],
+    "servers": [],
+    "components": {
+      "securitySchemes": {
+        "bearer": {
+          "scheme": "bearer",
+          "bearerFormat": "JWT",
+          "type": "http"
+        }
+      },
+      "schemas": {
+        "VemoxInputDto": {
+          "type": "object",
+          "properties": {
+            "language": {
+              "type": "string",
+              "default": "SQL"
+            },
+            "command": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "language",
+            "command"
+          ]
+        }
+      }
+    }
+  }
